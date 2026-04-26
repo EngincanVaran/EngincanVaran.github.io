@@ -1,411 +1,643 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>main</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engincan Varan — Senior AI Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    html {
-      color: #1a1a1a;
-      background-color: #fdfdfd;
+    :root {
+      --navy: #001F5A;
+      --accent: #F3890B;
+      --bg: #F7F5F0;
+      --surface: #FFFFFF;
+      --text: #1a1a1a;
+      --muted: #6b6b6b;
+      --border: #e2ddd6;
+      --tag-bg: #EEF0F8;
+      --expert: #1a4a1a;
+      --expert-bg: #e8f5e8;
+      --proficient: #1a3a5c;
+      --proficient-bg: #e8f0f8;
+      --familiar: #5c4a1a;
+      --familiar-bg: #f8f4e8;
     }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--navy);
+      color: white;
+      padding: 3rem 0 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: rgba(243, 137, 11, 0.12);
+      pointer-events: none;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: 10%;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(255,255,255, 0.04);
+      pointer-events: none;
+    }
+
+    .header-inner {
+      max-width: 860px;
       margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 1;
     }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 12px;
-      }
-      h1 {
-        font-size: 1.8em;
-      }
+
+    .name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+      margin-bottom: 0.4rem;
     }
-    @media print {
-      html {
-        background-color: white;
-      }
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
+
+    .tagline {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      margin-bottom: 1.6rem;
+      text-transform: uppercase;
     }
-    p {
-      margin: 1em 0;
+
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.8rem;
     }
-    a {
-      color: #1a1a1a;
+
+    .contact-grid a {
+      color: rgba(255,255,255,0.78);
+      text-decoration: none;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
     }
-    a:visited {
-      color: #1a1a1a;
+
+    .contact-grid a:hover { color: var(--accent); }
+
+    .contact-grid svg {
+      width: 14px; height: 14px;
+      flex-shrink: 0;
+      opacity: 0.7;
     }
-    img {
-      max-width: 100%;
+
+    /* ── LAYOUT ── */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 4rem;
     }
-    svg {
-      height: auto;
-      max-width: 100%;
+
+    /* ── SECTION ── */
+    section { margin-bottom: 2.4rem; }
+
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.15rem;
+      color: var(--navy);
+      letter-spacing: 0.01em;
+      padding-bottom: 0.45rem;
+      border-bottom: 2px solid var(--accent);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
+
+    /* ── SUMMARY ── */
+    .summary p {
+      color: #2a2a2a;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      font-weight: 300;
     }
-    h5, h6 {
-      font-size: 1em;
+
+    /* ── SKILLS ── */
+    .skill-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 0.5rem 1rem;
+      align-items: start;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.875rem;
+    }
+
+    .skill-row:last-child { border-bottom: none; }
+
+    .skill-label {
+      font-weight: 600;
+      color: var(--navy);
+      font-size: 0.8rem;
+      padding-top: 0.15rem;
+    }
+
+    .skill-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .skill-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.18rem 0.55rem;
+      border-radius: 3px;
+      font-size: 0.78rem;
+      font-family: 'DM Mono', monospace;
+      font-weight: 400;
+    }
+
+    .skill-tag.expert {
+      background: var(--expert-bg);
+      color: var(--expert);
+    }
+
+    .skill-tag.proficient {
+      background: var(--proficient-bg);
+      color: var(--proficient);
+    }
+
+    .skill-tag.familiar {
+      background: var(--familiar-bg);
+      color: var(--familiar);
+    }
+
+    .skill-tag .badge {
+      font-size: 0.65rem;
+      opacity: 0.7;
       font-style: italic;
     }
-    h6 {
-      font-weight: normal;
+
+    /* ── EXPERIENCE ── */
+    .job { margin-bottom: 1.6rem; }
+    .job:last-child { margin-bottom: 0; }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.2rem;
+      margin-bottom: 0.2rem;
     }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
+
+    .job-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--navy);
     }
-    li > ol, li > ul {
-      margin-top: 0;
+
+    .job-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+      white-space: nowrap;
     }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
+
+    .job-company {
+      font-size: 0.82rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 0.55rem;
     }
-    code {
-      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
-      font-size: 85%;
-      margin: 0;
-      hyphens: manual;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-      overflow-wrap: normal;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid #1a1a1a;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
-      display: block;
-      font-variant-numeric: lining-nums tabular-nums;
-    }
-    table caption {
-      margin-bottom: 0.75em;
-    }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
-    }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
-    }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
-    }
-    #TOC li {
+
+    .job ul {
+      padding-left: 1.1rem;
       list-style: none;
     }
-    #TOC ul {
-      padding-left: 1.3em;
+
+    .job ul li {
+      font-size: 0.875rem;
+      line-height: 1.65;
+      margin-bottom: 0.35rem;
+      position: relative;
+      color: #2a2a2a;
     }
-    #TOC > ul {
-      padding-left: 0;
+
+    .job ul li::before {
+      content: '–';
+      position: absolute;
+      left: -1.1rem;
+      color: var(--accent);
+      font-weight: 600;
     }
-    #TOC a:not(:hover) {
+
+    .job ul li strong {
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    /* ── PUBLICATIONS ── */
+    .pub-item {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pub-item:last-child { border-bottom: none; }
+
+    .pub-item a {
+      color: var(--accent);
       text-decoration: none;
+      font-weight: 500;
     }
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    /* The extra [class] is a hack that increases specificity enough to
-       override a similar rule in reveal.js */
-    ul.task-list[class]{list-style: none;}
-    ul.task-list li input[type="checkbox"] {
-      font-size: inherit;
-      width: 0.8em;
-      margin: 0 0.8em 0.2em -1.6em;
-      vertical-align: middle;
+
+    .pub-item a:hover { text-decoration: underline; }
+
+    /* ── EDUCATION ── */
+    .edu-item { margin-bottom: 1.1rem; }
+    .edu-item:last-child { margin-bottom: 0; }
+
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.2rem;
     }
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+    .edu-degree {
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--navy);
+    }
+
+    .edu-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .edu-school {
+      font-size: 0.82rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+
+    .edu-detail {
+      font-size: 0.84rem;
+      color: #3a3a3a;
+      margin-top: 0.2rem;
+    }
+
+    /* ── LANGUAGES & HOBBIES ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .lang-item, .hobby-item {
+      font-size: 0.875rem;
+      padding: 0.25rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .lang-name { font-weight: 600; color: var(--navy); }
+    .lang-level { color: var(--muted); }
+
+    .hobby-icon { font-size: 1rem; }
+
+    /* ── DIVIDER ── */
+    .job-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 1.4rem 0;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    header { animation: fadeUp 0.5s ease both; }
+    section { animation: fadeUp 0.5s ease both; }
+    section:nth-child(1) { animation-delay: 0.05s; }
+    section:nth-child(2) { animation-delay: 0.1s; }
+    section:nth-child(3) { animation-delay: 0.15s; }
+    section:nth-child(4) { animation-delay: 0.2s; }
+    section:nth-child(5) { animation-delay: 0.25s; }
+    section:nth-child(6) { animation-delay: 0.3s; }
+    section:nth-child(7) { animation-delay: 0.35s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .skill-row { grid-template-columns: 1fr; }
+      .two-col { grid-template-columns: 1fr; }
+      .job-header { flex-direction: column; }
+      .edu-header { flex-direction: column; }
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: white; font-size: 12pt; }
+      header { background: var(--navy) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      section { animation: none; }
+    }
   </style>
 </head>
 <body>
-<div class="center">
-<p><span class="smallcaps"></span></p>
-<p>Engincan Varan<br />
-<strong></strong></p>
-<p>Senior AI Engineer | NLP Specialist | LLM/MLOPS Specialist<br />
-</p>
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 34%" />
-</colgroup>
-<tbody>
-<tr>
-<td style="text-align: left;"> <a
-href="mailto:engincanvaran@gmail.com">engincanvaran@gmail.com</a></td>
-<td style="text-align: left;"> +90-534-4331481</td>
-<td style="text-align: left;"> İstanbul, Turkey</td>
-</tr>
-<tr>
-<td style="text-align: left;"> <a
-href="https://www.linkedin.com/in/engincan-varan">engincan-varan</a></td>
-<td style="text-align: left;"> <a
-href="https://github.com/EngincanVaran">EngincanVaran</a></td>
-<td style="text-align: left;"> <a
-href="https://orcid.org/0000-0002-8183-2049">0000-0002-8183-2049</a></td>
-</tr>
-</tbody>
-</table>
-<p><br />
-</p>
-</div>
-<h1 id="professional-summary">Professional Summary</h1>
-<p>Experienced Senior AI Engineer with a strong background in Python and
-Java backend development, complemented by expertise in scalable AI model
-deployment and deep learning inference optimization. Specialized in
-Natural Language Processing (NLP), Speech-to-Text (STT), Text-to-Speech
-(TTS), and Large Language Models (LLMs), with a proven track record of
-building, fine-tuning, and deploying advanced AI solutions. My strengths
-lie in leveraging state-of-the-art model serving frameworks such as
-vLLM, Caikit, NVIDIA Triton Inference Server, and OpenVINO to optimize
-inference speed, reduce latency, and ensure seamless AI integration.
-Passionate about MLOps, cloud-native AI architectures, and
-Retrieval-Augmented Generation (RAG), I excel in creating scalable,
-efficient, and production-ready AI systems that drive innovation and
-deliver impactful results.</p>
-<h1 id="key-skills">Key Skills</h1>
-<ul>
-<li><p><strong>Programming Languages:</strong> Python, Java, JavaScript,
-C++, Go</p></li>
-<li><p><strong>AI &amp; Deep Learning Frameworks:</strong> PyTorch,
-PyTorch Lightning, TensorFlow-Keras, Hugging Face, ONNX, OpenVINO,
-NVIDIA Triton Inference Server, Caikit, vLLM</p></li>
-<li><p><strong>NLP &amp; Model Serving:</strong> FastAPI, gRPC, OpenAI
-Triton, vLLM, Caikit, Retrieval-Augmented Generation (RAG),
-Transformer-based Architectures</p></li>
-<li><p><strong>Machine Learning:</strong> Supervised &amp; Unsupervised
-Learning, Neural Networks, Deep Learning, Generative AI, Model
-Optimization &amp; Quantization</p></li>
-<li><p><strong>Data Analysis &amp; Processing:</strong> Data
-Preprocessing, Feature Engineering, Statistical Analysis, Data
-Visualization (Matplotlib, Seaborn), NumPy, Pandas</p></li>
-<li><p><strong>DevOps &amp; MLOps:</strong> Docker, Kubernetes,
-OpenShift AI, CI/CD, Bitbucket, Model Deployment Pipelines, Scalable AI
-Inference Systems</p></li>
-<li><p><strong>Cloud Platforms:</strong> AWS, Azure, Red Hat
-OpenShift</p></li>
-<li><p><strong>Soft Skills:</strong> Team Collaboration,
-Problem-Solving, Effective Communication, Continuous Learning, Time
-Management, Critical Thinking, Attention to Detail</p></li>
-</ul>
-<h1 id="work-experience">Work Experience</h1>
-<h2 id="senior-ai-engineer-nlp-specialist-llmops-engineer">Senior AI
-Engineer &amp; NLP Specialist &amp; LLMOps Engineer</h2>
-<p><em>TEBArf, İstanbul, Turkey Jan 2024 – Present</em></p>
-<ul>
-<li><p>Spearheading the development of AI-driven solutions in
-<strong>STT, TTS, and NLP</strong>, ensuring cutting-edge performance
-and scalability.</p></li>
-<li><p>Architecting and deploying a production-grade STT service using
-<strong>FastAPI and gRPC</strong>, leveraging OpenAI’s Whisper model
-with fine-tuning for enhanced domain-specific accuracy.</p></li>
-<li><p>Leading the development of an <strong>AI-powered conversational
-assistant</strong> that integrates STT, TTS, and LLMs to facilitate
-seamless human-machine interactions.</p></li>
-<li><p>Building and optimizing <strong>RAG pipelines</strong> to enhance
-knowledge retrieval and contextual response generation.</p></li>
-<li><p>Developing and fine-tuning TTS models to improve speech synthesis
-quality, employing advanced NLP and audio signal processing
-techniques.</p></li>
-<li><p>Leading an <strong>enterprise-level complaint classification
-system</strong> using hierarchical Logistic Regression (HiClass) to
-automate and streamline customer support.</p></li>
-<li><p>Driving <strong>Intelligent Document Processing (IDP)</strong>
-with <strong>Named Entity Recognition (NER)</strong> regex-based
-extraction, and NLP for structured data retrieval.</p></li>
-<li><p>Deploying <strong>AI solutions on OpenShift Container
-Platform</strong>, ensuring scalability, reliability, and high
-availability in production environments.</p></li>
-<li><p>Implementing state-of-the-art LLM and deep learning model serving
-frameworks, including <strong>vLLM, Caikit, NVIDIA Triton Inference
-Server, and OpenVINO</strong>, optimizing inference speed and reducing
-latency.</p></li>
-<li><p>Developing domain-adapted translation models using <strong>Meta’s
-M2M and fine-tuned language-specific models</strong> to enhance
-multilingual communication and automatic document translation.</p></li>
-<li><p>Collaborating with cross-functional teams to integrate AI
-technologies into financial and customer service applications while
-ensuring operational efficiency.</p></li>
-</ul>
-<h2 id="software-engineer-i-ii">Software Engineer I &amp; II</h2>
-<p><em>Getir, İstanbul, Turkey Feb 2022 – Jan 2024</em></p>
-<ul>
-<li><p>Promoted from SWE I to SWE II in September 2023.</p></li>
-<li><p>Led projects like Order Prioritization and Operating Hours Demand
-Forecasting.</p></li>
-<li><p>Developed and optimized the GetirWater algorithm using Python and
-FastAPI, enhancing operational efficiency.</p></li>
-<li><p>Implemented advanced optimization techniques (e.g., TSP, VRPTW)
-to improve logistical solutions.</p></li>
-<li><p>Modernized software systems with cutting-edge design patterns and
-automated testing, ensuring high-quality delivery.</p></li>
-<li><p>Collaborated with cross-functional teams to drive product success
-and customer satisfaction.</p></li>
-<li><p>Adapted machine learning algorithms for industry-specific
-applications, boosting performance and revenue.</p></li>
-</ul>
-<h2 id="junior-software-engineer">Junior Software Engineer</h2>
-<p><em>Yapı Kredi Bank, İstanbul, Turkey Jan 2021 – Jan 2022</em></p>
-<ul>
-<li><p>Designed and implemented a new micro-service architecture using
-Java and React.</p></li>
-<li><p>Delivered project requests efficiently, contributing to high
-customer satisfaction.</p></li>
-</ul>
-<h2 id="part-time-software-engineer">Part-time Software Engineer</h2>
-<p><em>Allianz, İstanbul, Turkey Jul 2020 – Jan 2021</em></p>
-<ul>
-<li><p>Developed and modernized web applications using Angular, Ionic,
-and Java.</p></li>
-<li><p>Conducted testing and debugging of production systems.</p></li>
-</ul>
-<h2 id="software-engineering-internship">Software Engineering
-Internship</h2>
-<p><em>Akbank, İstanbul, Turkey Jun 2020 – Jul 2020</em></p>
-<ul>
-<li><p>Developed back-end services using .NET and Java.</p></li>
-<li><p>Executed project requirements using Agile methodology.</p></li>
-</ul>
-<h1 id="projects">Projects</h1>
-<h2 id="sentiment-and-intent-analysis">Sentiment and Intent
-Analysis</h2>
-<ul>
-<li><p>Developed a Sentiment and Intent Analysis model to analyze
-customer feedback and determine their sentiments and intents.</p></li>
-<li><p>Utilized advanced NLP techniques and libraries such as NLTK,
-SpaCy, and Transformers. [<a
-href="https://github.com/EngincanVaran/SentimentAndIntentAnalysis">SentimentAndIntentAnalysis</a>]</p></li>
-</ul>
-<h2 id="nlp-projects">NLP Projects</h2>
-<ul>
-<li><p>Developed Named Entity Recognition (NER) and Text Classification
-models using Python and various NLP libraries.</p></li>
-<li><p>Implemented a Language Model project to improve word vector
-representations.</p></li>
-<li><p>Leveraged advanced NLP techniques to enhance model performance
-and accuracy.</p></li>
-<li><p>Utilized libraries such as NLTK, SpaCy, and Gensim for
-preprocessing and analysis. [<a
-href="https://github.com/EngincanVaran/CS-445-Natural-Language-Processing-Project-4-NER-with-Machine-Learning">NLP-NER</a>]
-[<a
-href="https://github.com/EngincanVaran/CS-445-Natural-Language-Processing-Project-3-Text-Classification">Text-Classification</a>]
-[<a
-href="https://github.com/EngincanVaran/CS-445-Natural-Language-Processing--NLP--Project-2-Language-Model-Word-Vectors">Language-Models</a>]</p></li>
-</ul>
-<h2 id="pure-projects">PURE Projects</h2>
-<ul>
-<li><p>Conducted research on Synchronizing Sequences and implemented
-algorithms to address complex computational problems.</p></li>
-<li><p>Developed Python and C++ programs for generating Linear
-Complementary Dual (LCD) codes.</p></li>
-<li><p>Utilized data-driven methodologies to evaluate various
-algorithmic approaches. [<a
-href="https://github.com/EngincanVaran/Intersection-of-Code-Pairs">Code-Pairs</a>]
-[<a
-href="https://github.com/EngincanVaran/Synchronizing-Finite-Automata-with-Shortest-Synchronizing-Sequence">Shortest-Synchronizing-Sequence</a>]</p></li>
-</ul>
-<h1 id="education">Education</h1>
-<h2 id="m.sc.-computer-science">M.Sc. Computer Science</h2>
-<p><em>Sabancı University (Ongoing), İstanbul, Turkey 2021 –
-Current</em></p>
-<ul>
-<li><p>cGPA: 4.0</p></li>
-<li><p>Thesis: Advancing Cybersecurity with a Deep Learning Approach for
-Detecting Control Flow-Based Attacks</p></li>
-</ul>
-<h2 id="b.sc.-computer-science">B.Sc. Computer Science</h2>
-<p><em>Sabancı University, İstanbul, Turkey 2017 – 2021</em></p>
-<ul>
-<li><p>cGPA: 3.8</p></li>
-<li><p>Mathematics Minor Degree</p></li>
-</ul>
-<h2 id="computer-science-erasmus-exchange">Computer Science (Erasmus
-Exchange)</h2>
-<p><em>Mälardalens Högskola, Västerås, Sweden 2019 – 2020</em></p>
-<h2 id="high-school">High School</h2>
-<p><em>TEV İnanç Türkeş High School, Kocaeli, Turkey 2012 –
-2017</em></p>
-<ul>
-<li><p>GPA: 97.3</p></li>
-</ul>
-<h1 id="publications">Publications</h1>
-<ul>
-<li><p>Engincan Varan, "Using Page Offsets for Detecting Control-Flow
-Anomalies," Innovative Security Solutions for Information Technology and
-Communications, 2023. [<a
-href="https://doi.org/10.1007/978-3-031-52947-4_2">DOI:
-10.1007/978-3-031-52947-4</a>]</p></li>
-<li><p>For more publications, visit my ORCID profile: [<a
-href="https://orcid.org/0000-0002-8183-2049">https://orcid.org/0000-0002-8183-2049</a>]</p></li>
-</ul>
-<h1 id="languages-and-hobbies">Languages and Hobbies</h1>
-<div class="multicols">
-<p><span>2</span></p>
-<h2 class="unnumbered" id="languages-known">Languages Known</h2>
-<ul>
-<li><p><strong>Turkish:</strong> Native</p></li>
-<li><p><strong>English:</strong> Advanced (C2)</p></li>
-<li><p><strong>German:</strong> Basic (A2)</p></li>
-</ul>
-<h2 class="unnumbered" id="hobbies">Hobbies</h2>
-<ul>
-<li><p> Tennis (Part of TEB&amp;TEBArf Tennis Team)</p></li>
-<li><p> Computer Games</p></li>
-<li><p> Beer Making and Tasting</p></li>
-<li><p> Archery</p></li>
-</ul>
-</div>
+
+<header>
+  <div class="header-inner">
+    <div class="name">Engincan Varan</div>
+    <div class="tagline">Senior AI Engineer &nbsp;|&nbsp; NLP · LLMs · Generative AI &amp; Agentic AI</div>
+    <div class="contact-grid">
+      <a href="mailto:engincanvaran@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        engincanvaran@gmail.com
+      </a>
+      <a href="tel:+905344331481">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.08 3.4 2 2 0 0 1 3.05 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16z"/></svg>
+        +90-534-433-1481
+      </a>
+      <a href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        İstanbul, Turkey
+      </a>
+      <a href="https://www.linkedin.com/in/engincan-varan" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        engincan-varan
+      </a>
+      <a href="https://github.com/EngincanVaran" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        EngincanVaran
+      </a>
+      <a href="https://orcid.org/0000-0002-8183-2049" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><text x="12" y="16" text-anchor="middle" font-size="10" font-weight="bold">iD</text></svg>
+        ORCID: 0000-0002-8183-2049
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- SUMMARY -->
+  <section class="summary">
+    <div class="section-title">Professional Summary</div>
+    <p>Senior AI Engineer with 5+ years of experience building and deploying production-grade AI systems, specializing in NLP, Speech (STT/TTS), LLMs, and RAG pipelines. Proven track record of architecting end-to-end AI solutions — from model research and fine-tuning to scalable inference and enterprise deployment. Experienced in LLMOps, cloud-native AI on OpenShift, and delivering measurable impact across financial and enterprise domains.</p>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <div class="section-title">Key Skills</div>
+
+    <div class="skill-row">
+      <div class="skill-label">Programming Languages</div>
+      <div class="skill-items">
+        <span class="skill-tag expert">Python <span class="badge">Expert</span></span>
+        <span class="skill-tag proficient">Node.js <span class="badge">Proficient</span></span>
+        <span class="skill-tag proficient">JavaScript <span class="badge">Proficient</span></span>
+        <span class="skill-tag familiar">Java <span class="badge">Familiar</span></span>
+        <span class="skill-tag familiar">C++ <span class="badge">Familiar</span></span>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-label">AI &amp; Deep Learning</div>
+      <div class="skill-items">
+        <span class="skill-tag expert">PyTorch <span class="badge">Expert</span></span>
+        <span class="skill-tag expert">Hugging Face <span class="badge">Expert</span></span>
+        <span class="skill-tag proficient">TensorFlow-Keras <span class="badge">Proficient</span></span>
+        <span class="skill-tag proficient">ONNX Runtime <span class="badge">Proficient</span></span>
+        <span class="skill-tag proficient">OpenVINO <span class="badge">Proficient</span></span>
+        <span class="skill-tag proficient">vLLM <span class="badge">Proficient</span></span>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-label">LLMs &amp; Generative AI</div>
+      <div class="skill-items">
+        <span class="skill-tag expert">RAG Pipelines <span class="badge">Expert</span></span>
+        <span class="skill-tag expert">Prompt Engineering &amp; LLM Eval <span class="badge">Expert</span></span>
+        <span class="skill-tag expert">LangChain <span class="badge">Expert</span></span>
+        <span class="skill-tag expert">LlamaIndex <span class="badge">Expert</span></span>
+        <span class="skill-tag familiar">Agentic AI <span class="badge">Familiar</span></span>
+        <span class="skill-tag familiar">LangGraph <span class="badge">Familiar</span></span>
+        <span class="skill-tag familiar">Flowise <span class="badge">Familiar</span></span>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-label">NLP &amp; Speech</div>
+      <div class="skill-items">
+        <span class="skill-tag expert">STT/TTS <span class="badge">Expert</span></span>
+        <span class="skill-tag expert">NER <span class="badge">Expert</span></span>
+        <span class="skill-tag expert">Text Classification <span class="badge">Expert</span></span>
+        <span class="skill-tag proficient">Weaviate <span class="badge">Proficient</span></span>
+        <span class="skill-tag proficient">Pinecone <span class="badge">Proficient</span></span>
+        <span class="skill-tag proficient">Chroma <span class="badge">Proficient</span></span>
+        <span class="skill-tag proficient">Reranking <span class="badge">Proficient</span></span>
+        <span class="skill-tag proficient">Embedding Models <span class="badge">Proficient</span></span>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-label">Async &amp; Data Systems</div>
+      <div class="skill-items">
+        <span class="skill-tag proficient">RabbitMQ <span class="badge">Proficient</span></span>
+        <span class="skill-tag proficient">Kafka <span class="badge">Proficient</span></span>
+        <span class="skill-tag proficient">OCR <span class="badge">Proficient</span></span>
+        <span class="skill-tag expert">NumPy <span class="badge">Expert</span></span>
+        <span class="skill-tag expert">Pandas <span class="badge">Expert</span></span>
+      </div>
+    </div>
+
+    <div class="skill-row">
+      <div class="skill-label">DevOps &amp; MLOps</div>
+      <div class="skill-items">
+        <span class="skill-tag proficient">Docker <span class="badge">Proficient</span></span>
+        <span class="skill-tag proficient">Kubernetes <span class="badge">Proficient</span></span>
+        <span class="skill-tag proficient">OpenShift <span class="badge">Proficient</span></span>
+        <span class="skill-tag proficient">CI/CD <span class="badge">Proficient</span></span>
+        <span class="skill-tag proficient">MLflow <span class="badge">Proficient</span></span>
+        <span class="skill-tag proficient">Prometheus <span class="badge">Proficient</span></span>
+        <span class="skill-tag proficient">Ragas <span class="badge">Proficient</span></span>
+        <span class="skill-tag familiar">AWS <span class="badge">Familiar</span></span>
+        <span class="skill-tag familiar">Azure <span class="badge">Familiar</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section>
+    <div class="section-title">Work Experience</div>
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Senior AI Engineer &amp; LLMOps Specialist</div>
+        <div class="job-date">Jan 2024 – Present</div>
+      </div>
+      <div class="job-company">TEBArf · İstanbul, Turkey</div>
+      <ul>
+        <li>Architecting and deploying enterprise-grade <strong>RAG pipelines</strong> with full runtime and pipeline orchestration — integrating <strong>RabbitMQ</strong> for async processing, <strong>OCR models</strong> for document ingestion, and advanced chunking strategies across multiple enterprise clients.</li>
+        <li>Building and maintaining a custom <strong>RAG and LLM evaluation framework</strong>, including a purpose-built dataset for benchmarking <strong>embedding model performance</strong> across domain-specific use cases using <strong>Ragas</strong>.</li>
+        <li>Informally leading and mentoring a team of <strong>4–5 AI engineers</strong> — overseeing project scoping, conducting technical reviews, and representing the team in cross-functional meetings and stakeholder discussions.</li>
+        <li>Defining and enforcing team-wide <strong>engineering standards</strong> — including OOP principles, design patterns (Strategy, Chain of Responsibility, Builder), service routing, API gateway management, and API documentation practices.</li>
+        <li>Designing and maintaining production <strong>STT and TTS services</strong> with both <strong>near-real-time and batch processing</strong> capabilities, serving real users at scale while conducting ongoing research to improve model accuracy and latency.</li>
+        <li>Leading <strong>Intelligent Document Processing (IDP)</strong> for financial and banking documents (contracts, invoices) — combining <strong>LLMs, NLP techniques, and regex-based extraction</strong> to automate information retrieval and document categorization.</li>
+        <li>Building and maintaining an <strong>AI-powered conversational assistant</strong> that integrates STT, TTS, and LLMs for seamless human-machine interaction in production environments.</li>
+        <li>Optimizing LLM and deep learning inference using <strong>vLLM, OpenVINO, and ONNX Runtime</strong> to reduce latency and improve throughput for production workloads.</li>
+        <li>Deploying and maintaining <strong>AI services on OpenShift Container Platform</strong>, ensuring high availability, scalability, and reliability across production environments.</li>
+        <li>Driving an <strong>enterprise complaint classification system</strong> using hierarchical ML (HiClass) to automate customer support routing at scale.</li>
+      </ul>
+    </div>
+
+    <hr class="job-divider">
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Software Engineer I &amp; II</div>
+        <div class="job-date">Feb 2022 – Jan 2024</div>
+      </div>
+      <div class="job-company">Getir · İstanbul, Turkey</div>
+      <ul>
+        <li>Promoted from SWE I to SWE II within 18 months; led key initiatives including <strong>Order Prioritization</strong> and <strong>Operating Hours Demand Forecasting</strong>.</li>
+        <li>Designed and optimized the <strong>GetirWater algorithm</strong> using Python and FastAPI, improving last-mile delivery logistics efficiency.</li>
+        <li>Applied advanced combinatorial optimization techniques (<strong>TSP, VRPTW</strong>) to enhance route planning and reduce operational costs.</li>
+        <li>Adapted ML algorithms to industry-specific logistics challenges, delivering tangible improvements in delivery performance and revenue.</li>
+      </ul>
+    </div>
+
+    <hr class="job-divider">
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Junior Software Engineer</div>
+        <div class="job-date">Jan 2021 – Jan 2022</div>
+      </div>
+      <div class="job-company">Yapı Kredi Bank · İstanbul, Turkey</div>
+      <ul>
+        <li>Designed and implemented a <strong>microservice architecture</strong> using Java and React for internal banking systems.</li>
+        <li>Delivered multiple project milestones on schedule, contributing to strong internal customer satisfaction.</li>
+      </ul>
+    </div>
+
+    <hr class="job-divider">
+
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">Part-time Engineer &amp; Internship</div>
+        <div class="job-date">Jun 2020 – Jan 2021</div>
+      </div>
+      <div class="job-company">Allianz (Part-time) · Akbank (Intern) · İstanbul, Turkey</div>
+      <ul>
+        <li>Developed and modernized web applications using <strong>Angular, Ionic, and Java</strong> at Allianz; built back-end services using <strong>.NET and Java</strong> at Akbank.</li>
+        <li>Gained hands-on experience with production systems, testing, debugging, and Agile delivery practices.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section>
+    <div class="section-title">Publications</div>
+    <div class="pub-item">
+      Engincan Varan, "Using Page Offsets for Detecting Control-Flow Anomalies," <em>Innovative Security Solutions for Information Technology and Communications</em>, 2023.
+      &nbsp;<a href="https://doi.org/10.1007/978-3-031-52947-4_2" target="_blank">DOI: 10.1007/978-3-031-52947-4</a>
+    </div>
+    <div class="pub-item">
+      For more publications, visit my ORCID profile:
+      &nbsp;<a href="https://orcid.org/0000-0002-8183-2049" target="_blank">orcid.org/0000-0002-8183-2049</a>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <div class="section-title">Education</div>
+
+    <div class="edu-item">
+      <div class="edu-header">
+        <div class="edu-degree">M.Sc. Computer Science (Studies Pursued)</div>
+        <div class="edu-date">2021 – 2024</div>
+      </div>
+      <div class="edu-school">Sabancı University · İstanbul, Turkey</div>
+      <div class="edu-detail">cGPA: 4.0 &nbsp;·&nbsp; Completed graduate-level coursework in AI, deep learning, and cybersecurity</div>
+      <div class="edu-detail">Research focus: Deep learning approaches for detecting control flow-based attacks; work contributed to a peer-reviewed publication</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-header">
+        <div class="edu-degree">B.Sc. Computer Science</div>
+        <div class="edu-date">2017 – 2021</div>
+      </div>
+      <div class="edu-school">Sabancı University · İstanbul, Turkey</div>
+      <div class="edu-detail">cGPA: 3.8 &nbsp;·&nbsp; Mathematics Minor Degree</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-header">
+        <div class="edu-degree">Computer Science (Erasmus Exchange)</div>
+        <div class="edu-date">2019 – 2020</div>
+      </div>
+      <div class="edu-school">Mälardalens Högskola · Västerås, Sweden</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-header">
+        <div class="edu-degree">High School</div>
+        <div class="edu-date">2012 – 2017</div>
+      </div>
+      <div class="edu-school">TEV İnanç Türkeş High School · Kocaeli, Turkey</div>
+      <div class="edu-detail">Selective gifted &amp; talented institution admitting students based on national academic merit exams</div>
+    </div>
+  </section>
+
+  <!-- LANGUAGES & HOBBIES -->
+  <section>
+    <div class="section-title">Languages &amp; Hobbies</div>
+    <div class="two-col">
+      <div>
+        <div class="lang-item"><span class="lang-name">Turkish</span><span class="lang-level">— Native</span></div>
+        <div class="lang-item"><span class="lang-name">English</span><span class="lang-level">— Advanced (C2)</span></div>
+        <div class="lang-item"><span class="lang-name">German</span><span class="lang-level">— Basic (A2)</span></div>
+      </div>
+      <div>
+        <div class="hobby-item"><span class="hobby-icon">🎾</span> Tennis (Part of TEB&amp;TEBArf Tennis Team)</div>
+        <div class="hobby-item"><span class="hobby-icon">🥁</span> Drumming</div>
+        <div class="hobby-item"><span class="hobby-icon">🎯</span> Archery</div>
+      </div>
+    </div>
+  </section>
+
+</main>
 </body>
 </html>
