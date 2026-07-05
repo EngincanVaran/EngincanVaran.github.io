@@ -112,6 +112,30 @@
       opacity: 0.7;
     }
 
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.4rem;
+      padding: 0.5rem 1.2rem;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: opacity 0.2s;
+    }
+
+    .download-btn:hover { opacity: 0.85; }
+
+    .download-btn svg {
+      width: 14px; height: 14px;
+      flex-shrink: 0;
+    }
+
     /* ── LAYOUT ── */
     main {
       max-width: 860px;
@@ -413,6 +437,10 @@
         ORCID: 0000-0002-8183-2049
       </a>
     </div>
+    <a href="engincan_varan_cv.pdf" download class="download-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download PDF
+    </a>
   </div>
 </header>
 

@@ -16,6 +16,7 @@ __pycache__/
 *.out
 *.toc
 *.pdf
+!engincan_varan_cv.pdf
 
 # macOS
 .DS_Store
