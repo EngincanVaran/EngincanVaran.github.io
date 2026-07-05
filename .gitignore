@@ -1,0 +1,21 @@
+# IDE
+.idea/
+.vscode/
+
+# Claude Code
+.claude/
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+
+# LaTeX artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.pdf
+
+# macOS
+.DS_Store
