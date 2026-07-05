@@ -1,0 +1,179 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{left=1.5cm, right=1.5cm, top=1.5cm, bottom=1.5cm}
+\usepackage{amsmath, amssymb}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{fontawesome}
+\usepackage{multicol} % For multi-column layout
+
+% Define colors
+\definecolor{primary}{RGB}{0, 0, 0}
+\definecolor{secondary}{RGB}{0, 31, 90}
+\definecolor{accent}{RGB}{243, 137, 11}
+
+% Section formatting
+\titleformat{\section}
+  {\color{primary}\scshape\Large\raggedright}
+  {}{0em}{}[\titlerule]
+
+% Subsection formatting with reduced spacing
+\titlespacing*{\subsection}
+  {0.5pt}{0pt}{0pt}
+\titleformat{\subsection}
+  {\color{secondary}\large\bfseries\raggedright}
+  {}{0em}{}
+
+% Command for adding name
+\newcommand{\name}[1]{\Huge\scshape\raggedright #1 \\ \vspace{0.1cm}}
+\newcommand{\tagline}[1]{\large\bfseries\raggedright #1 \\ \vspace{0.2cm}}
+\newcommand{\personalinfo}[1]{\normalsize\raggedright #1 \\ \vspace{0.1cm}}
+
+% Adjust spacing
+\setlength{\parskip}{0.2em}
+\setlength{\parindent}{0em}
+
+% Reduce spacing in itemize environments
+\setlist{nosep, noitemsep}
+
+\begin{document}
+
+% Personal Information
+\begin{center}
+    \name{Engincan Varan}
+    \tagline{Lead AI Engineer | NLP $\cdot$ LLMs $\cdot$ Generative AI}
+    \personalinfo{
+        \begin{tabular}{>{\raggedright}p{0.33\linewidth} >{\centering}p{0.33\linewidth} >{\raggedleft\arraybackslash}p{0.34\linewidth}}
+            \faEnvelope \ \href{mailto:engincanvaran@gmail.com}{engincanvaran@gmail.com} & 
+            \faPhone \ +90-534-4331481 & 
+            \faMapMarker \ İstanbul, Turkey \\
+            \faLinkedin \ \href{https://www.linkedin.com/in/engincan-varan}{engincan-varan} & 
+            \faGithub \ \href{https://github.com/EngincanVaran}{EngincanVaran} & 
+            ORCID: \href{https://orcid.org/0000-0002-8183-2049}{0000-0002-8183-2049}
+        \end{tabular}
+    }
+\end{center}
+
+% Professional Summary
+\vspace{-0.5cm}
+\section{Professional Summary}
+Lead AI Engineer with 6+ years of experience building and deploying production-grade AI systems, specializing in NLP, Speech (STT/TTS), LLMs, and RAG pipelines. Proven track record of architecting end-to-end AI solutions --- from model research and fine-tuning to scalable inference and enterprise deployment. Currently leading a team of AI engineers across multiple products, with deep expertise in LLMOps, cloud-native AI on OpenShift, and delivering measurable impact across financial and enterprise domains.
+
+% Key Skills
+\vspace{-0.5cm}
+\section{Technical Skills}
+\begin{itemize}[label=--,leftmargin=*]
+    \item \textbf{Programming Languages:} Python \textit{\small(Expert)} $\cdot$ Node.js, JavaScript \textit{\small(Proficient)} $\cdot$ Java, C++ \textit{\small(Familiar)}
+    \item \textbf{AI \& Deep Learning:} PyTorch \textit{\small(Expert)} $\cdot$ Hugging Face \textit{\small(Expert)} $\cdot$ TensorFlow-Keras \textit{\small(Proficient)} $\cdot$ ONNX Runtime, OpenVINO, vLLM \textit{\small(Proficient)}
+    \item \textbf{LLMs \& Generative AI:} RAG Pipelines \textit{\small(Expert)} $\cdot$ Prompt Engineering \& LLM Evaluation \textit{\small(Expert)} $\cdot$ LangChain, LlamaIndex \textit{\small(Expert)} $\cdot$ LangGraph \textit{\small(Proficient)} $\cdot$ Agentic AI, Flowise \textit{\small(Familiar)}
+    \item \textbf{NLP \& Speech:} STT/TTS \textit{\small(Expert)} $\cdot$ NER, Text Classification \textit{\small(Expert)} $\cdot$ Vector DBs --- Weaviate, Pinecone, Chroma \textit{\small(Proficient)} $\cdot$ Reranking, Embedding Models \textit{\small(Proficient)}
+    \item \textbf{Async \& Data Systems:} RabbitMQ, Kafka \textit{\small(Proficient)} $\cdot$ OCR \textit{\small(Proficient)} $\cdot$ NumPy, Pandas \textit{\small(Expert)}
+    \item \textbf{DevOps \& MLOps:} Docker, Kubernetes, OpenShift \textit{\small(Proficient)} $\cdot$ CI/CD, MLflow, Prometheus, Ragas \textit{\small(Proficient)} $\cdot$ AWS, Azure \textit{\small(Familiar)}
+\end{itemize}
+
+% Work Experience
+\vspace{-0.5cm}
+\section{Work Experience}
+
+\subsection{Lead AI Engineer}
+\textit{\href{https://www.tebarf.com.tr}{TEBArf} (TEB Group --- AI \& Technology), İstanbul, Turkey \hfill May 2026 -- Present}
+\begin{itemize}[label=--,leftmargin=*]
+    \item Promoted to Lead AI Engineer, formally taking ownership of team direction, project scoping, and cross-functional stakeholder representation.
+    \item Leading and mentoring a team of \textbf{4--5 AI engineers} --- conducting technical reviews, defining delivery priorities, and driving engineering quality across all AI products.
+\end{itemize}
+
+\subsection{Senior AI Engineer \& LLMOps Specialist}
+\textit{\href{https://www.tebarf.com.tr}{TEBArf} (TEB Group --- AI \& Technology), İstanbul, Turkey \hfill Jan 2024 -- May 2026}
+\begin{itemize}[label=--,leftmargin=*]
+    \item Architecting and deploying enterprise-grade \textbf{RAG pipelines} for \textbf{8+ enterprise clients} --- integrating \textbf{RabbitMQ} for async processing, \textbf{OCR models} for document ingestion, and advanced chunking strategies with full runtime orchestration.
+    \item Built a custom \textbf{RAG and LLM evaluation framework} using \textbf{Ragas}, with a purpose-built benchmarking dataset that improved retrieval accuracy by \textbf{up to 35\%} across domain-specific use cases.
+    \item Defining and enforcing team-wide \textbf{engineering standards} --- including OOP principles, design patterns (Strategy, Chain of Responsibility, Builder), service routing, API gateway management, and API documentation practices --- ensuring maintainable and scalable service architecture across all AI products.
+    \item Designed and maintained production \textbf{STT and TTS services} processing \textbf{thousands of calls daily}, with both near-real-time and batch capabilities, while continuously improving model accuracy and latency.
+    \item Leading \textbf{Intelligent Document Processing (IDP)} for financial and banking documents (contracts, invoices) --- combining \textbf{LLMs, NLP techniques, and regex-based extraction} to automate information retrieval and document categorization.
+    \item Built and maintained an \textbf{AI-powered conversational assistant} integrating STT, TTS, and LLMs for seamless human-machine interaction in production environments.
+    \item Optimized LLM and deep learning inference using \textbf{vLLM, OpenVINO, and ONNX Runtime} to reduce latency and improve throughput for production workloads.
+    \item Deployed and maintained \textbf{AI services on OpenShift Container Platform}, ensuring high availability, scalability, and reliability across production environments.
+    \item Built an \textbf{enterprise complaint classification system} using hierarchical ML (HiClass), achieving \textbf{$\sim$87\% accuracy} and automating routing of \textbf{thousands of complaints daily}.
+\end{itemize}
+
+\subsection{Software Engineer I \& II}
+\textit{\href{https://getir.com}{Getir}, İstanbul, Turkey \hfill Feb 2022 -- Jan 2024}
+\begin{itemize}[label=--,leftmargin=*]
+    \item Promoted from SWE I to SWE II within 18 months; led key initiatives including \textbf{Order Prioritization} and \textbf{Operating Hours Demand Forecasting}.
+    \item Designed and optimized the \textbf{GetirWater algorithm} using Python and FastAPI, improving last-mile delivery logistics efficiency by \textbf{20--30\%}.
+    \item Applied advanced combinatorial optimization (\textbf{TSP, VRPTW}) to enhance route planning, reducing operational costs and delivery times across active routes.
+    \item Adapted ML algorithms to industry-specific logistics challenges, delivering measurable improvements in delivery performance.
+\end{itemize}
+
+\subsection{Junior Software Engineer}
+\textit{\href{https://www.yapikredi.com.tr}{Yapı Kredi Bank}, İstanbul, Turkey \hfill Jan 2021 -- Jan 2022}
+\begin{itemize}[label=--,leftmargin=*]
+    \item Contributed to the bank's first monolithic-to-microservice migration --- a pioneering initiative at the institution --- delivering full-stack development with \textbf{React} and \textbf{Java Spring Boot} for core internal banking systems.
+\end{itemize}
+
+\subsection{Part-time Engineer \& Internship}
+\textit{\href{https://www.allianz.com.tr}{Allianz Turkey} (Part-time) $\cdot$ \href{https://www.akbank.com}{Akbank} (Intern), İstanbul, Turkey \hfill Jun 2020 -- Jan 2021}
+\begin{itemize}[label=--,leftmargin=*]
+    \item Modernized web applications with \textbf{Angular, Ionic, and Java} at Allianz; built back-end services with \textbf{.NET and Java} at Akbank --- gaining early exposure to enterprise-scale production systems.
+\end{itemize}
+
+% Education
+\vspace{-0.5cm}
+\section{Education}
+\subsection{M.Sc. Computer Science (All Coursework Completed)}
+\textit{Sabancı University, İstanbul, Turkey \hfill 2021 -- 2024}
+\begin{itemize}[label=--,leftmargin=*]
+    \item cGPA: 4.0 $\cdot$ Completed graduate-level coursework in AI, deep learning, and cybersecurity
+    \item Research focus: Deep learning approaches for detecting control flow-based attacks; work contributed to a peer-reviewed publication
+\end{itemize}
+
+\subsection{B.Sc. Computer Science}
+\textit{Sabancı University, İstanbul, Turkey \hfill 2017 -- 2021}
+\begin{itemize}[label=--,leftmargin=*]
+    \item cGPA: 3.8
+    \item Mathematics Minor Degree
+\end{itemize}
+
+\subsection{Computer Science (Erasmus Exchange)}
+\textit{Mälardalens Högskola, Västerås, Sweden \hfill 2019 -- 2020}
+
+\subsection{High School}
+\textit{TEV İnanç Türkeş High School, Kocaeli, Turkey \hfill 2012 -- 2017}
+\begin{itemize}[label=--,leftmargin=*]
+    \item Selective gifted \& talented institution admitting students based on national academic merit exams
+\end{itemize}
+
+% Publications
+\vspace{-0.5cm}
+\section{Publications}
+
+\begin{itemize}[label=--,leftmargin=*]
+    \item Engincan Varan, ``Using Page Offsets for Detecting Control-Flow Anomalies,''
+\textit{Innovative Security Solutions for Information Technology and Communications}, Springer, 2023. [\href{https://doi.org/10.1007/978-3-031-52947-4_2}{DOI: 10.1007/978-3-031-52947-4\_2}]
+\end{itemize}
+
+% Languages Known and Hobbies
+\vspace{-0.5cm}
+\section{Languages and Hobbies}
+\vspace{-0.5cm}
+\begin{multicols}{2}
+    \subsection*{Languages Known}
+    \begin{itemize}[label=--,leftmargin=*]
+        \item \textbf{Turkish:} Native
+        \item \textbf{English:} Advanced (C2)
+        \item \textbf{German:} Basic (A2)
+    \end{itemize}
+    \subsection*{Hobbies}
+    \begin{itemize}[label=--,leftmargin=*]
+        \item \faTrophy \ Tennis (Part of TEB\&TEBArf Tennis Team)
+        \item \faMusic \ Drumming
+        \item \faBullseye \ Archery
+    \end{itemize}
+\end{multicols}
+
+\end{document}

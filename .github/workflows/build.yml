@@ -1,0 +1,30 @@
+name: Build CV
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "main.tex"
+  pull_request:
+    paths:
+      - "main.tex"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install tectonic
+        uses: wtfjoke/setup-tectonic@v3
+
+      - name: Build PDF
+        run: tectonic main.tex
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: engincan_varan_cv
+          path: main.pdf
+          retention-days: 30
